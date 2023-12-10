@@ -1,0 +1,23 @@
+---
+const { company, position, startDate, endDate, tasks } = Astro.props;
+---
+
+<div class="mb-8">
+  <h3 class="text-lg text-gray-600">{company}</h3>
+  <div class="flex justify-between text-sm text-gray-400">
+    <div>
+      <span>{position}</span>
+    </div>
+    <div>
+      <span>{startDate} - {endDate}</span>
+    </div>
+  </div>
+
+  <ul class="list-disc ml-4 text-sm text-gray-500">
+    {tasks.map((task) => (
+          <li>{task}</li>
+        )
+      )
+    }
+  </ul>
+</div>

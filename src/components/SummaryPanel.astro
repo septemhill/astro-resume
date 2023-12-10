@@ -1,0 +1,15 @@
+---
+const { summaries } = Astro.props
+import SummaryCard from './SummaryCard.astro';
+---
+<section class="bg-white p-5 rounded-lg shadow-md mb-8">
+  <h2 class="border-b pb-2 mb-4 text-lg font-medium">Summary</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {summaries.map((summary) => (
+          <SummaryCard section={summary.section} description={summary.description}/>
+        )
+      )
+    }
+  </div>
+</section>

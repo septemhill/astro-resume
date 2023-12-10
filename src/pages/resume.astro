@@ -1,0 +1,121 @@
+
+---
+import ExperienceCard from '../components/ExperienceCard.astro';
+import ExperiencePanel from '../components/ExperiencePanel.astro';
+import SkillPanel from '../components/SkillPanel.astro';
+import SummaryPanel from '../components/SummaryPanel.astro';
+import IntroducePanel from '../components/IntroducePanel.astro';
+import EducationPanel from '../components/EducationPanel.astro';
+---
+<!-- src/pages/index.astro -->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ching-Huan Li - Resume</title>
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 px-8 py-12">
+  <!-- Mobile and Tablet View -->
+  <div class="sm:flex sm:min-h-screen">
+    <!-- Left Column -->
+    <div class="sm:w-1/4 bg-white py-8 px-6">
+      <div class="flex flex-col items-center">        
+        <IntroducePanel />
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="sm:w-3/4 px-8 bg-gray-100">
+      <!-- Education -->
+      <EducationPanel
+        educations={[
+          {"school":"National Chung Cheng University", "degree": "Master", "department":"Computer Science", "startDate":"Feb 2010", "endDate": "Feb 2012"},
+          {"school":"National United University", "degree": "Bachelor", "department":"Computer Science", "startDate":"Sep 2006", "endDate": "Jan 2010"}
+        ]}
+      />
+
+      <!-- Profession Summary -->
+      <SummaryPanel
+        summaries={[
+          {"section":"Cloud Services", "description": "Experienced in AWS, includes Cloudfront, S3, SQS, DynamoDB services."},
+          {"section":"Backend Development", "description": "Familiar with gin, go-kit, mux, gorm, and testify frameworks"},
+          {"section":"Monitoring & Logging", "description": "Familiar with Prometheus and ElasticSearch."},
+          {"section":"Testing & QA", "description": "Strong experience in unit testing with a good understanding of testing tools and practices."},
+          {"section":"API Development", "description": "Experienced in building REST APIs and gRPC."},
+          {"section":"Database & Cache", "description": "Proficient in Kafka, Redis, and Relational Databases."},
+          {"section":"Integration", "description": "Experienced in Slack bot development, capable of integrating diverse application scenarios."}   
+        ]}
+      />
+
+      <!-- Experience -->
+      <ExperiencePanel 
+        experiences={[
+          {"company": "A5 Labs", "position": "Senior Golang Developer", "startDate": "Aug 2023", "endDate": "Now", "tasks": [
+                  "Integrated third-party mini-games into our platform.",
+                  "Developed Slack bot to receive slash command and integrated with infrastructures.",
+                  "Introduced code coverage, code linters and formatter to increase code quality and also make sure the code coverage rate over specific value for each service.",
+                  "Dockerize new creation and existing services.",
+                  "Migrated projects from Go 1.14.12 to Go 1.21.2. Removed redundant, unused modules to improve code hygiene."]},
+          {"company": "Binance", "position": "Senior Golang Developer", "startDate": "Nov 2021", "endDate": "Jul 2023", "tasks": [
+                  "Reduced Redis CPU utilization from 65% to 30% by grouping data to reduce 45% Redis commands and introducing in-memory cache mechanism.",
+                  "Optimised code size 25% - 30% and improving the code quality. Also increased code coverage rate from 72% to 90%.",
+                  "Used truss and mockery codegen tool created services template and mock testing template.",
+                  "Dockerize new creation and existing services.",
+                  "Migrated projects from Go 1.14.12 to Go 1.21.2. Removed redundant, unused modules to improve code hygiene.",
+                  "Supporting Multi-Tenancy and designing Workspace mechanism to separate 1st-Party and 3rd-Party Mini-Programs",
+                  "Designing campaign mission component. For fulfilling different mission requirements, collaborated with KYC and Referral teams.",
+                  "Cross function team collaboration, includes DevOps, Frontend, QA and other external services Backend teams."]},
+          {"company": "PhotoGrid", "position": "Senior Backend Developer", "startDate": "Jun 2021", "endDate": "Oct 2021", "tasks": [
+                  "Refactor existed codebase with MVC model and improving the code quality.",
+                  "Introduce code quality static checker (golangci-lint). Also introducing Common Vulnerabilities and Exposures checker (nancy) into CI.",
+                  "Introduce Hashicorp Vault to separate the keys, secrets out of codebase.",
+                  "Profile the RESTful APIs execution time with ELK and reduce the 20% response time with specified APIs."]},
+          {"company": "TrueTel", "position": "Senior Backend Developer", "startDate": "Jul 2019", "endDate": "May 2021", "tasks": [
+                  "Collaborating with Nauto cloud team via JIRA and Slack. Building micro-services, migrating RESTful APIs which with two versions JSON data format. Also built data record changes history APIs and RDBMS (PostgreSQL) data migration.",
+                  "Developing several user scenarios for Google MTBF, CUJ (Critical User Journey) testing on different Chromebook models and build log analysis system with EFK. Also using Grafana, Prometheus monitors the target devices CPU, memory and network bandwidth.",
+                  "Designing a server resource dispatcher which dispatch the server for service contains 1 to 3 Chrome instances that could communicate via CDP (Chrome Devtools Protocol) to build Zoom conferences with a lot of bots. And providing gRPC and RESTful interface for accessing.",
+                  "Contributing CUJ scenario cases and framework changes to Chromium open source project, includes tast and tast-tests repositories."]},
+          {"company": "IOEX", "position": "Blockchain Developer", "startDate": "Sep 2018", "endDate": "Jun 2019", "tasks": [
+                  "Ethereum smart contract development with Solidity.",
+                  "Transplant DPoS consensus into Elastos, Ethereum.",
+                  "Collecting transactions into database and implements RESTful APIs for Blockchain Explorer.",
+                  "Implements auto-transaction generator tool for blockchain pressure testing."]},
+          {"company": "Retair", "position": "Frontend Developer", "startDate": "May 2017", "endDate": "Aug 2018", "tasks": [
+                  "Used AngularJS and jQuery frameworks in the development of web applications.",
+                  "Developed UI components.",
+                  "Experience with consuming RESTful web services.",
+                  "Rendered visualization charts with ECharts, C3 libraries.",
+                  "Communicated updates in daily meeting using JIRA software.",
+                  "Provided multi-language support using i18n library.",
+                  "Cross-browser testing / implementation.",
+                  "Refactor existing code, enhancements and improvements overall code quality."]},
+          {"company": "Pegatron", "position": "Senior Firmware Developer", "startDate": "Apr 2012", "endDate": "Apr 2017", "tasks": [
+                  "Software design for JBOD and Server.",
+                  "Bridge and coordinate with cross-function teams, including EE, Power, QTR, QTC and Manufacturing side.",
+                  "Debugging and function verification.",
+                  "Develop BMC with AST2300, AST2400, AST2500 and PILOT-4 chips. Familiar with AMI code base.",
+                  "Working with Trac project management."]},
+        ]}
+      />
+
+      <!-- Skill -->
+      <SkillPanel
+        skills={[
+          {"name": "Git", "percent": 90},
+          {"name": "Go", "percent": 90},
+          {"name": "C", "percent": 80},
+          {"name": "MicroServices", "percent": 80},
+          {"name": "gRPC", "percent": 80},
+          {"name": "RESTful", "percent": 80},
+          {"name": "Kubernetes", "percent": 40}
+        ]}
+      />
+
+    </div>
+</body>
+
+</html>

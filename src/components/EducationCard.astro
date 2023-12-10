@@ -1,0 +1,14 @@
+---
+const { school, degree, department, startDate, endDate } = Astro.props;
+---
+<div class="mb-4">
+  <h3 class="text-base font-medium">{school}</h3>
+  <div class="flex justify-between text-sm text-gray-400">
+    <div>
+      <span class="text-gray-600 text-sm">{degree} of {department}</span>
+    </div>
+    <div>
+      <span class="text-gray-600 text-sm">{startDate} - {endDate}</span>
+    </div>
+  </div>
+</div>

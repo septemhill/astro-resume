@@ -1,0 +1,14 @@
+---
+const { skills } = Astro.props
+import SkillCard from './SkillCard.astro';
+---
+<section class="bg-white p-5 rounded-lg shadow-md">
+  <h2 class="border-b pb-2 mb-4 text-lg font-medium">Skills</h2>
+  <div class="text-gray-500 text-sm grid grid-cols-1 md:grid-cols-2 gap-4">
+    {skills.map((skill) => (
+          <SkillCard skill={skill.name} percent={skill.percent}/>
+        )
+      )
+    }
+  </div>
+</section>

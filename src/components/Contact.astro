@@ -1,0 +1,20 @@
+---
+const { email, github, linkedin} = Astro.props;
+import { Icon } from 'astro-icon'; 
+---
+
+<div>
+  <div class="text-base flex items-center mb-8">
+    <a href={`mailto:${email}`} class="flex items-center mr-3">
+      <Icon name="ion:mail" class="w-6 h-6 mr-2" />
+    </a>
+
+    <a href={`https://github.com/${github}`} class="flex items-center mr-3">
+      <Icon name="akar-icons:github-fill" class="w-6 h-6 mr-2" />
+    </a>
+
+    <a href={linkedin} class="flex items-center">
+      <Icon name="cib:linkedin" class="w-6 h-6 mr-2" />
+    </a>
+  </div>
+</div>

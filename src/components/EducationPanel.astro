@@ -1,0 +1,33 @@
+---
+const { educations } = Astro.props;
+import EducationCard from './EducationCard.astro';
+---
+<section class="bg-white p-5 rounded-lg shadow-md mb-8">
+  <h2 class="border-b pb-2 mb-4 text-lg font-medium">Education</h2>
+    {educations.map((education) => (
+          <EducationCard 
+            school={education.school}
+            degree={education.degree}
+            department={education.department}
+            startDate={education.startDate}
+            endDate={education.endDate}
+          />
+        )
+      )
+    }
+  <!-- <EducationCard 
+    school="National Chung Cheng University"
+    degree="Master"
+    department="Computer Science"
+    startDate="Feb 2010"
+    endDate="Feb 2012"
+  />
+
+  <EducationCard 
+    school="National United University"
+    degree="Bachelor"
+    department="Computer Science"
+    startDate="Sep 2006"
+    endDate="Jan 2010"
+  /> -->
+</section>
